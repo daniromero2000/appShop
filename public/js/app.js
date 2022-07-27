@@ -3427,11 +3427,15 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_7__["default"]({
   }, {
     path: '/cart',
     name: 'cart',
-    component: _components_cart_ProductsShoppingCart_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _components_cart_ProductsShoppingCart_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    meta: {
+      requireAuth: true
+    }
   }]
 }); // middleware
 
 router.beforeEach(function (to, from, next) {
+  // check if the route requires authentication and user is not logged in
   if (to.matched.some(function (record) {
     return record.meta.requireAuth;
   })) {

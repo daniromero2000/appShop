@@ -38,12 +38,14 @@ const router = new Router({
             path: '/cart',
             name: 'cart',
             component: Cart,
+            meta: { requireAuth: true }
         },
     ]
 });
 
 // middleware
 router.beforeEach((to, from, next) => {
+    // check if the route requires authentication and user is not logged in
     if (to.matched.some((record) => record.meta.requireAuth)) {
         if (store.getters.isLoggedIn) {
             next();
