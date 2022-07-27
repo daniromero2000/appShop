@@ -9,16 +9,7 @@
 
 ### Introduction
 
-Cash register is a system that will help you simulate a cash register through a REST API.
 
-**The system offers the following services:**
-
-1.	Load the base into the cash register.
-2.	Empty cash register.
-3.	Cash register status.
-4.	Make a payment.
-5.	View event log.
-6.	View the status of the box based on a specific date and time.
 
 ### Requirements
 
@@ -45,8 +36,12 @@ composer install
 3. Set up all project config parameters in the .env project file (database connection)
 4. Run the following commands:
 ```
-php artisan migrate
+php artisan migrate --seed
+```
+```
 php artisan key:generate.
+```
+```
 php artisan jwt:secret
 ```
 
