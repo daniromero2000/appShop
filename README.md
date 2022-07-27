@@ -8,8 +8,9 @@
 6. [Miscellaneous](#miscellaneous)
 
 ### Introduction
+This application was designed to show a list of different food dishes, it has the functionality of a cart in which you can add and delete products. It also has the functionality to create an order with these products.
 
-
+![img.png](public/images/docs/img.png)
 
 ### Requirements
 
@@ -30,16 +31,15 @@
 ```
 composer install
 ```
-
 1. Create a new database.
 2. Copy the .env.example file content a paste it in the .env of the project.
 3. Set up all project config parameters in the .env project file (database connection)
 4. Run the following commands:
 ```
+php artisan key:generate
+```
+```
 php artisan migrate --seed
-```
-```
-php artisan key:generate.
 ```
 ```
 php artisan jwt:secret
@@ -48,6 +48,9 @@ php artisan jwt:secret
 ##### Install node modules
 ```
 npm install
+```
+```
+npm run dev
 ```
 
 ##### Steps to run the tests
@@ -70,9 +73,17 @@ Note that you must first generate the token and replace it in the postman author
 php artisan serve
 ```
 
+### Test data:
+When running the migrations, the following test user will be created and you can login with it
 ```
-npm run dev
+User: admin@correo.com
+Password: secret
 ```
+
+### TODO
+1. Add alert messages
+2. Add order list view
+
 ## License
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
